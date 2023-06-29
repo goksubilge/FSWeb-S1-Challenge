@@ -206,10 +206,13 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
-function fenomenSil(/*kod*/) {
-  /*kod*/
-}
+function fenomenSil(dizi,indx) {
 
+  const fenoludizi = [...dizi];
+  fenoludizi.splice(indx,1);
+  return fenoludizi;
+  }
+console.log ("görev 5:", fenomenSil(fenomenler,0))
 
 
 /* Görev 6:
@@ -229,9 +232,20 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-function fenomenEkle(/*kod*/) {
-  /*kod*/
+function fenomenEkle(dizi, number, profile, followers, posts, platform) {
+  const kopyafenomenler = [...dizi];
+  const object = {
+    "number":     number,
+    "profile":    profile,
+    "followers":  followers,
+    "posts":      posts,
+    "platform":   platform,
+  }
+kopyafenomenler.push(object);
+return kopyafenomenler;
+//kopyalananfenomenler dizisinin içinde de object i istediğim yere koyalarak yeni eklemek istediğim objecyi ekleme yaptırabilirdim
 }
+console.log("görev 6:", fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram"))
 
 
 /* Görev 7:
@@ -242,9 +256,19 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+function enFenomenler(dizi) {
+  const enFenolar = [];
+   
+  for (let i = 0; i < dizi.length ; i++) {
+
+    if (dizi[i].followers>100000000){
+      enFenolar.push(dizi[i].profile);
+      //enFenolar.push(dizi[i].["profile"]);   alternatif olarak yazım şekli
+    }
+  }
+  return enFenolar;
 }
+console.log("görev 7:",enFenomenler(fenomenler))
 
 
 /* Görev 8:
@@ -255,10 +279,16 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
-
-function fenomenGonderimSayisi(/*kod*/){
-  /*kod*/
+function fenomenGonderimSayisi(dizi,profiladi){
+  
+  for (let i = 0; i < dizi.length; i++) {
+    
+    if (dizi[i].profile === profiladi) {
+      return dizi[i].posts;
+    }
+  }
 }
+console.log ("görev 8:", fenomenGonderimSayisi(fenomenler, 'Will Smith'))
 
 
 
@@ -273,9 +303,15 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
 
-function platformaGoreCokGonderiYapanFenomen(/*kod*/){
-  /*kod*/
+function platformaGoreCokGonderiYapanFenomen(dizi, pltAdi) {
+  for() {
+
+    if() {
+
+    }
+  }
 }
+console.log ("görev 9:", platformaGoreCokGonderiYapanFenomen(fenomenler,'TikTok'));
 
 
 
