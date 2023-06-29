@@ -304,16 +304,40 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 */
 
 function platformaGoreCokGonderiYapanFenomen(dizi, pltAdi) {
-  for() {
+  let enPopi = "";
+  let testDizisi = [];
+  let maxGonSay = 0;
+  for( let i = 0; i < dizi.length; i++) {
+    console.log ("post sayısı:" , dizi[i].posts, dizi[i].platform)
 
-    if() {
-
+    if( pltAdi === dizi[i].platform && maxGonSay < dizi[i].posts && dizi[i].posts !== "NA") {
+      testDizisi.push(dizi[i].profile);
+      maxGonSay = dizi[i].posts;
+      enPopi = dizi[i].profile;
+      console.log("max gön sayısı:" , maxGonSay);
     }
   }
+  return enPopi;
 }
 console.log ("görev 9:", platformaGoreCokGonderiYapanFenomen(fenomenler,'TikTok'));
 
+/*  GÖKHANIN ÇÖZÜMÜ 
+function platformaGoreCokGonderiYapanFenomen(dizi, pltAdi) {
+  let enFazla = 0;
+  let yeri = 0;
 
+  for( let i in dizi) {
+    
+    if( pltAdi === dizi[i].platform && enFazla < dizi[i].posts && dizi[i].posts !== "NA") {
+      enFazla = dizi[i].posts;
+      yeri = i;
+    }
+  }
+  console.log(dizi[yeri].profile);
+  return dizi[yeri].profile;
+}
+console.log ("görev 9:", platformaGoreCokGonderiYapanFenomen(fenomenler,'TikTok'));
+*/
 
 /* ***** GÖREVLERİN SONU ***** */
 
